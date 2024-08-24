@@ -2,6 +2,8 @@ import 'package:firebase2/crud/FormUI2.dart';
 import 'package:firebase2/firebase_options.dart';
 import 'package:firebase2/form/Login.dart';
 import 'package:firebase2/list/list.dart';
+import 'package:firebase2/login/HomeScreen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -24,7 +26,17 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       // home: MYHome(),
-      home: MyFormLogin(),
+      home: StreamBuilder(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (context, snapshot){
+          if(snapshot.hasData){
+            return const MyHomeLogin();
+          }
+          else{
+            return const MyFormLogin();
+          }
+        },
+      ),
     );
   }
 }
