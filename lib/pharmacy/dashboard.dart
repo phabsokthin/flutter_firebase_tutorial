@@ -27,7 +27,7 @@ class Dashboard2 extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Image.network(
-              'https://icons.veryicon.com/png/o/internet--web/prejudice/user-128.png',
+              'https://cdn-icons-png.flaticon.com/512/6819/6819083.png',
               height: 30,
             ),
             TextButton(
@@ -48,7 +48,7 @@ class Dashboard2 extends StatelessWidget {
         ),
         centerTitle: true,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_rounded),
+          icon: const Icon(Icons.person),
           iconSize: 32,
           color: Colors.blue,
           onPressed: () {
