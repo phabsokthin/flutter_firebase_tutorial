@@ -3,6 +3,8 @@ import 'package:firebase2/firebase_options.dart';
 import 'package:firebase2/form/Login.dart';
 import 'package:firebase2/list/list.dart';
 import 'package:firebase2/login/HomeScreen.dart';
+import 'package:firebase2/pharmacy/dashboard.dart';
+import 'package:firebase2/pharmacy/pharmacy.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -25,18 +27,19 @@ class MyApp extends StatelessWidget {
 
 
     return MaterialApp(
-      // home: MYHome(),
-      home: StreamBuilder(
-        stream: FirebaseAuth.instance.authStateChanges(),
-        builder: (context, snapshot){
-          if(snapshot.hasData){
-            return const MyHomeLogin();
-          }
-          else{
-            return const MyFormLogin();
-          }
-        },
-      ),
+      home: MyFormLogin(),
+      // home: PharmaMateApp(),
+      // home: StreamBuilder(
+      //   stream: FirebaseAuth.instance.authStateChanges(),
+      //   builder: (context, snapshot){
+      //     if(snapshot.hasData){
+      //       return const MyHomeLogin();
+      //     }
+      //     else{
+      //       return const MyFormUI2();
+      //     }
+      //   },
+      // ),
     );
   }
 }

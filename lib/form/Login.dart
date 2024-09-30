@@ -1,5 +1,7 @@
 import 'package:firebase2/form/SignUp.dart';
 import 'package:firebase2/login/HomeScreen.dart';
+import 'package:firebase2/pharmacy/dashboard.dart';
+import 'package:firebase2/pharmacy/pharmacy.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -107,7 +109,10 @@ class _MyFormLoginState extends State<MyFormLogin> {
             _isLoading
                 ? CircularProgressIndicator()
                 : ElevatedButton(
-              onPressed: _handleSignIn,
+              // onPressed: _handleSignIn,
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Dashboard2()));
+              },
               child: Text(
                 "LOGIN",
                 style: TextStyle(color: Colors.white),
